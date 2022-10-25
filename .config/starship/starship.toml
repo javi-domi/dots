@@ -1,0 +1,104 @@
+format = """
+[](#689d6a)\
+$username\
+[](bg:#83a598 fg:#689d6a)\
+$directory\
+[](fg:#83a598 bg:#fe8019)\
+$git_branch\
+$git_status\
+[](fg:#fe8019 bg:red)\
+$julia\
+$nodejs\
+$python\
+$conda\
+[](fg:red bg:green)\
+$docker_context\
+[](fg:green bg:purple)\
+$time\
+[ ](fg:purple)\
+"""
+
+# Disable the blank line at the start of the prompt
+# add_newline = false
+
+# You can also replace your username with a neat symbol like  to save some space
+[username]
+show_always = true
+style_user = "bg:#689d6a"
+style_root = "bg:#689d6a"
+format = '[👾 $user ]($style)'
+
+[directory]
+style = "bg:blue"
+format = "[ $path ]($style)"
+truncation_length = 3
+truncation_symbol = "…/"
+
+# Here is how you can shorten some long paths by text replacement
+# similar to mapped_locations in Oh My Posh:
+[directory.substitutions]
+"Documents" = " "
+"Downloads" = " "
+"Music" = " "
+"Pictures" = " "
+# Keep in mind that the order matters. For example:
+# "Important Documents" = "  "
+# will not be replaced, because "Documents" was already substituted before.
+# So either put "Important Documents" before "Documents" or use the substituted version:
+# "Important  " = "  "
+
+[conda]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[docker_context]
+symbol = " "
+style = "bg:green"
+format = '[ $symbol $context ]($style) $path'
+
+[git_branch]
+symbol = ""
+style = "bg:#fe8019"
+format = '[ $symbol $branch ]($style)'
+
+[git_status]
+style = "bg:#fe8019"
+format = '[$all_status$ahead_behind ]($style)'
+
+[julia]
+symbol = " "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[nodejs]
+symbol = ""
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[python]
+symbol = " "
+style = "bg:red"
+format = '[ $symbol ($version) ]($style)'
+
+[aws]
+symbol = "  "
+style = "bg:#86BBD8"
+format = '[ $symbol ($version) ]($style)'
+
+[time]
+disabled = false
+time_format = "%R" # Hour:Minute Format
+style = "bg:purple"
+format = '[ $time ➜ ]($style)'
+
+
+
+
+
+
+
+
+
+
+
